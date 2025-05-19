@@ -242,24 +242,39 @@ def main():
             st.session_state.openai_key = openai_key
             create_property_agent()
 
-    st.title("🏠 AI Real Estate Agent")
+    st.title("🏠 Kerala's AI Real Estate Agent")
     st.info(
         """
-        Welcome to the AI Real Estate Agent! 
+        Welcome to the Kerala's AI Real Estate Agent! 
         Enter your search criteria below to get property recommendations 
         and location insights.
         """
     )
-
+    kerala_cities = [
+    "Trivandrum",
+    "Kochi",
+    "Kozhikode",
+    "Kollam",
+    "Thrissur",
+    "Alappuzha",
+    "Palakkad",
+    "Kottayam",
+    "Kannur",
+    "Malappuram",
+    "Pathanamthitta",
+    "Kasaragod",
+    "Idukki",
+    "Wayanad"
+    ]
     col1, col2 = st.columns(2)
     
     with col1:
-        city = st.text_input(
-            "City",
-            placeholder="Enter city name (e.g., Bangalore)",
-            help="Enter the city where you want to search for properties"
-        )
-        
+        #city = st.text_input(
+        #    "City",
+        #    placeholder="Enter city name (e.g., Bangalore)",
+        #    help="Enter the city where you want to search for properties"
+        #)
+        city = st.selectbox("Select a city in Kerala", kerala_cities)
         property_category = st.selectbox(
             "Property Category",
             options=["Residential", "Commercial"],
